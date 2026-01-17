@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Splitter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://unpkg.com/tesseract.js@v4.0.1/dist/tesseract.min.js'></script>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>1. Scan or Add Bill</h2>
+        <div class="controls">
+            <input type="file" id="billUpload" accept="image/*">
+            <input type="text" id="manualName" placeholder="Item Name">
+            <input type="number" id="manualPrice" placeholder="Price" step="0.01">
+            <button onclick="addManualItem()">Add Manually</button>
+        </div>
+        <div id="status">Ready.</div>
+    </div>
+
+    <div class="card">
+        <h2>2. Manage People</h2>
+        <div class="controls">
+            <input type="text" id="newPersonName" placeholder="Name">
+            <button onclick="addPerson()" class="secondary">Add Person</button>
+        </div>
+        <div id="peopleList"></div>
+    </div>
+
+    <div class="card" style="overflow-x: auto;">
+        <h2>3. Split the Bill</h2>
+        <table id="billTable">
+            <thead>
+                <tr id="headerRow">
+                    <th class="itemDetails">Item</th>
+                    <th class="itemDetails">Price</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+            <tfoot>
+                <tr id="totalRow" class="total-row">
+                    <td colspan="2">Total Per Person</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="card" style="text-align: right;">
+        <h3 id="billGrandTotal" style="margin: 0; color: #1e293b;">Total Bill: €0.00</h3>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
