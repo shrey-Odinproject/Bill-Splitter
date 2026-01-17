@@ -21,6 +21,10 @@ To apply a discount, tax deduction, or a fixed-amount voucher:
 ### 2. OCR Scanning Limitations
 > [!WARNING]  
 > **Accuracy Notice:** The "Upload Bill" feature uses Tesseract.js (client-side OCR). While convenient, it is **not 100% reliable** yet.
+
+> [!TIP]
+> **For Best Results:** When taking a photo or uploading, try to scan **only the items and prices**. Excluding the store header (contact details) and the footer (totals/tax) prevents the AI from getting confused by extra numbers.
+
 * **Image Quality:** Ensure the photo is well-lit and the text is not blurry.
 * **Verification:** Always double-check the prices and item names after scanning. 
 * **Manual Correction:** Use the "Add Manually" or "Remove (✕)" buttons to fix any errors the AI makes.
