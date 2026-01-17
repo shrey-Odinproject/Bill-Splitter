@@ -84,7 +84,6 @@ function removeItem(index) {
 }
 
 // Rendering UI
-// Add this new function to your script.js
 function toggleAllForPerson(personIdx) {
     // Check if at least one item is NOT checked for this person
     const anyUnchecked = items.some(item => !item.splits[personIdx]);
@@ -93,6 +92,13 @@ function toggleAllForPerson(personIdx) {
     items.forEach(item => {
         item.splits[personIdx] = anyUnchecked;
     });
+    render();
+}
+
+// toggle all people for an item
+function toggleAllForItem(itemIdx) {
+    const anyUnselected = items[itemIdx].splits.some(s => !s);
+    items[itemIdx].splits = items[itemIdx].splits.map(() => anyUnselected);
     render();
 }
 
@@ -136,7 +142,14 @@ function render() {
                 <button onclick="removeItem(${itemIdx})" class="danger" style="padding:2px 5px; margin-right: 5px;">×</button> 
                 ${item.name}
             </td>
-            <td style="font-weight: bold;">€${item.price.toFixed(2)}</td>`;
+            <td style="font-weight: bold;">
+                €${item.price.toFixed(2)}
+                <br>
+                <button onclick="toggleAllForItem(${itemIdx})" 
+                    style="font-size: 10px; padding: 2px 4px; margin-top: 4px; cursor: pointer; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 3px; color: #475569;">
+                    Split All
+                </button>
+            </td>`;
 
         people.forEach((_, personIdx) => {
             const isChecked = item.splits[personIdx];
