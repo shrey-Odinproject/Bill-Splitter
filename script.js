@@ -1,5 +1,5 @@
 // State Management
-let people = ["shrey", "vatsal", "priyansh", "ayush", "samrah", "janu"];
+let people = ["shrey", "Ajay", "Anish", "Raj", "Naman", "Mohit", "Saksham", "Rakshit", "Vedang"];
 // Unique colors for each person (Cycles through these if more people are added)
 const colors = ["#ef4444", "#3b82f6", "#10b981", "#f59e0b", "#8b5cf6", "#ec4899", "#06b6d4", "#f43f5e"];
 let items = [];
